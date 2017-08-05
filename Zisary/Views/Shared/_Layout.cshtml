@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Youth Fashion A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <title>Zisary</title>
     <link href="~/css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css' />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="~/js/jquery.min.js"></script>
@@ -46,31 +46,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="header">
         <div class="header-top">
             <div class="container">
-                <div class="col-sm-4 logo animated wow fadeInLeft" data-wow-delay=".5s">
-                    <h1><a href="~/index.html">Youth <span>Fashion</span></a></h1>
+                <div class="col-sm-3 logo animated wow fadeInLeft" data-wow-delay=".5s">
+                    <h1><a href="~/index.html">Tienda <span>Zisary</span></a></h1>
                 </div>
-                <div class="col-sm-4 world animated wow fadeInRight" data-wow-delay=".5s">
+                <!--cart-->
+                <div id="activador" class="col-sm-5 world animated wow fadeInRight dropdown" data-wow-delay=".5s">
                     <div class="cart box_1">
-                        <a href="~/checkout.html">
+                        <a href="@Url.Action("Paso1","Compra")">
                             <h3>
                                 <div class="total">
-                                    <span class="simpleCart_total"></span>
+                                    <p>Cant<span id="nroProductosCarrito">(0)</span><p>
+                                    <p id="totalCompraCarrito">S/. 0.00<p>
                                 </div>
                                 <img src="~/images/cart.png" alt="" />
                             </h3>
                         </a>
                         <p><a href="~/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
-
                     </div>
+                    <!--probando-->
+                    <div id="desplegar" class="row">
+                        <div  id="itemcarrito"></div>
+                    </div>
+                    
+                    
+                    <!--Probando-->
                 </div>
+                <!--cart-->
                 <div class="col-sm-2 number animated wow fadeInRight" data-wow-delay=".5s">
-                    <span><i class="glyphicon glyphicon-phone"></i>085 596 234</span>
-                    <p>Call me</p>
+                    <span><i class="glyphicon glyphicon-phone"></i>996664444</span>
+                    <p>Contactenos</p>
                 </div>
                 <div class="col-sm-2 search animated wow fadeInRight" data-wow-delay=".5s">
                     <form method="get" action="@Url.Action("Buscar","Home")">
                         <button type="submit" style="background-color:transparent; border:none"><i class="glyphicon glyphicon-search"></i></button>
-                        <input type="text" class="search"  name="id" style="text-align:left"/>
+                        <input type="text" class="search" name="id" style="text-align:left" />
                     </form>
                 </div>
                 <div class="clearfix"> </div>
@@ -169,20 +178,20 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     </div>
                 </div>
                 <script>
-						$(document).ready(function() {
-						$('.popup-with-zoom-anim').magnificPopup({
-							type: 'inline',
-							fixedContentPos: false,
-							fixedBgPos: true,
-							overflowY: 'auto',
-							closeBtnInside: true,
-							preloader: false,
-							midClick: true,
-							removalDelay: 300,
-							mainClass: 'my-mfp-zoom-in'
-						});
+                    $(document).ready(function () {
+                        $('.popup-with-zoom-anim').magnificPopup({
+                            type: 'inline',
+                            fixedContentPos: false,
+                            fixedBgPos: true,
+                            overflowY: 'auto',
+                            closeBtnInside: true,
+                            preloader: false,
+                            midClick: true,
+                            removalDelay: 300,
+                            mainClass: 'my-mfp-zoom-in'
+                        });
 
-						});
+                    });
                 </script>
                 <!---->
             </div>
@@ -265,5 +274,66 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <!--footer-->
+    <link href="~/css/EstiloPanel.css" rel="stylesheet" />
+
+    <script>
+        $(function () {
+            var carrito = localStorage.getItem("carrito");
+            var productos = [];
+            if (carrito != null) {
+                productos = JSON.parse(carrito);
+                CargaCarrito(productos);
+            }
+        });
+
+        function CargaCarrito(productos) {
+            var html = '';
+            var total = 0;
+            $("#nroProductosCarrito").text('(' + productos.length + ')');
+            $.each(productos, function () {
+                total += this.Precio * this.Cantidad
+               
+                html +=  '<div class="item-in-cart clearfix">' +
+                '             <div class="image">' +
+                '                <img src="/ImgProductos/' + this.Imagen + '"width="90" height="90" alt="cart item"/>' +
+                '             </div>' +
+                '             <div class="desc">' +
+                '                 <strong><a href="product.html">' + this.Denominacion + '</a></strong>' +
+                '                 <span class="light-clr qty">cant: ' + this.Cantidad + ' &nbsp;' +
+                '                   <a href="#" class="icon-remove- sign" title="Remove Item"></a>' +
+                '                 </span>' +
+                '                 <strong>S/. ' + this.Precio + '</strong>' +
+                '             </div>' + 
+                '         </div>' +
+                '         <div class="price"></div><div class="price"></div>';
+                });
+                $('#itemcarrito').html(html);
+                $("#totalCompraCarrito,#totalCarrito").text('S/.' + total);
+        }
+
+        function AgregarCarrito(productoid, denominacion, imagen, precio) {
+            var carrito = localStorage.getItem("carrito");
+            var productos = [];
+            if (carrito != null) {
+                productos = JSON.parse(carrito);
+            }
+
+            var itemActual;
+            for (var i = 0; i < productos.length; i++) {
+                if (productos[i].ProductoId == productoid) {
+                    itemActual = productos[i];
+                }
+            }
+            if (!itemActual) {
+                productos.push({ ProductoId: productoid, Denominacion: denominacion, Precio: precio,Cantidad: 1, Imagen: imagen });
+            } else {
+                itemActual.Cantidad++;
+            }
+            var jsonStr = JSON.stringify(productos);    
+            localStorage.setItem("carrito", jsonStr);
+            CargaCarrito(productos);
+        }
+    </script>
+
 </body>
 </html>

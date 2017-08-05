@@ -108,6 +108,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="css\animate.min.css" />
     <Content Include="css\bootstrap-3.1.1.min.css" />
+    <Content Include="css\EstiloPanel.css" />
     <Content Include="css\flexslider.css" />
     <Content Include="css\popuo-box.css" />
     <Content Include="css\style.css" />
@@ -198,6 +199,7 @@
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\ProductoController.cs" />
     <Compile Include="Areas\admin\Models\ResponseModel.cs" />
+    <Compile Include="Controllers\CompraController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -268,6 +270,10 @@
     <Content Include="Areas\admin\Views\Producto\Edit.cshtml" />
     <Content Include="Areas\admin\Views\Producto\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Compra\Paso2.cshtml" />
+    <Content Include="Views\Compra\Paso3.cshtml" />
+    <Content Include="Views\Compra\Paso4.cshtml" />
+    <Content Include="Views\Compra\Paso1.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -5,25 +5,25 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zisary", "Zisary\Zisary.csproj", "{0C3B612E-DC39-4C15-812F-70D1BAFC1CD1}"
 EndProject
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "..\..\plantilas vs\web\", "{F220D40B-4305-42BD-9A89-2DA7A63AEF58}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "..\..\..\plantilas vs\web\", "{F220D40B-4305-42BD-9A89-2DA7A63AEF58}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_51232"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\plantilas vs\web\"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\plantilas vs\web\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51232\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/localhost_51232"
-		Release.AspNetCompiler.PhysicalPath = "..\..\plantilas vs\web\"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\plantilas vs\web\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51232\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "51232"
-		SlnRelativePath = "..\..\plantilas vs\web\"
+		SlnRelativePath = "..\..\..\plantilas vs\web\"
 	EndProjectSection
 EndProject
 Global

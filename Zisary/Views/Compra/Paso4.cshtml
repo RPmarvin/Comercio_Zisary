@@ -1,0 +1,82 @@
+﻿
+<!--//header-->
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInLeft;">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Checkout</li>
+        </ol>
+    </div>
+</div>
+<!---->
+<div class="container">
+    <div class="Paso 4">
+        <h2>Checkout</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">Item</th>
+                    <th>Quanty</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="itemcarrito"></tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Total:</th>
+                <th><div id="totalCompra">0.00</div></th>
+            </tr>
+        </table>
+
+        <a id="btnConfirmar" href="#" class="to-buy">CONFIRMAR & PAGAR</a>
+        <div class="clearfix"> </div>
+    </div>
+
+</div>
+<script>
+    $(function () {
+        var carrito = localStorage.getItem("carrito");
+        var productos = [];
+        if (carrito != null) {
+            productos = JSON.parse(carrito);
+            CargaProductos(productos);
+        }
+
+        $("#btnConfirmar").click(function () {
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                url: '@Url.Action("RealizarPedido","Compra")',
+                data: carrito,
+                success: function () {
+                    localStorage.removeItem("carrito");
+                    window.location = '@Url.Action("Index","Home")';
+                }
+            });
+        });
+    });
+
+    function CargaProductos(productos) {
+        var html = '';
+        var total = 0;
+        $.each(productos, function () {
+            total += this.Precio * this.Cantidad
+            html += '<tr>' +' <td class="image"><img src="/ImgProductos/' + this.Imagen +
+                '" alt="" width="124" height="124" /></td>' +
+                ' <td class="desc">' + this.Denominacion + ' &nbsp; <a title="Remove Item" class="icon-remove- sign" href="#"></a></td>' +
+                ' <td class="qty">' +
+                ' <input type="text" class="tiny-size" value="' + this.Cantidad + '" />' +
+                ' </td>' +
+                ' <td class="price">S/. ' + this.Precio + '</td>' +
+                ' </tr>'
+        });
+        $('#itemcarrito').html(html);
+        $("#totalCompra").text('S/.' + total);
+    }
+</script>
+
+
+
+

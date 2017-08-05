@@ -1,0 +1,115 @@
+﻿<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInLeft;">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Checkout</li>
+        </ol>
+    </div>
+</div>
+<div class="container">
+    <div class="check-out">
+        <h2>Paso 2</h2>
+        <!-- inicio de Formulario -->
+        <form class="form-horizontal">
+            <fieldset>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Nombre">Nombre</label>
+                    <div class="col-md-5">
+                        <input id="Nombre" name="Nombre" type="text" placeholder="Nombre" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Apellido">Apellido</label>
+                    <div class="col-md-5">
+                        <input id="Apellido" name="Apellido" type="text" placeholder="Apellido" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Telefono">Telefono</label>
+                    <div class="col-md-4">
+                        <input id="Telefono" name="Telefono" type="text" placeholder="Telefono" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Email">Email</label>
+                    <div class="col-md-4">
+                        <input id="Email" name="Email" type="text" placeholder="Email" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Celular">Celular</label>
+                    <div class="col-md-4">
+                        <input id="Celular" name="Celular" type="text" placeholder="Celular" class="form-control input-md">
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Direccion">Direccion</label>
+                    <div class="col-md-4">
+                        <input id="Direccion" name="Direccion" type="text" placeholder="Direccion" class="form-control input-md">
+
+                    </div>
+                </div>
+                <!-- Select Basic -->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Ciudad">Ciudad</label>
+                    <div class="col-md-4">
+                        <select id="Departamento" name="Departamento" class="form-control">
+                            <option value="1">Guatemala</option>
+                            <option value="2">Santa Rosa</option>
+                            <option value="3">Sacatepéquez</option>
+                            <option value="4">Jalapa</option>
+                            <option value="5">Jutiapa</option>
+                            <option value="6">San Marcos</option>
+                            <option value="7">Quetzaltenango</option>
+                            <option value="8">Petén</option>
+                            <option value="9">Alta Verapaz</option>
+                            <option value="10">Baja Verapaz</option>
+                            <option value="11">El Progreso</option>
+                            <option value="12">Izabal</option>
+                            <option value="13">Zacapa</option>
+                            <option value="14">Retalhuleu</option>
+                            <option value="15">Quiché</option>
+                            <option value="16">Huehuetenango</option>
+                            <option value="17">Escuintla</option>
+                            <option value="18">Chimaltenango</option>
+                            <option value="19">Chiquimula</option>
+                            <option value="20">Sololá</option>
+                            <option value="21">Suchitepéquez</option>
+                            <option value="22">Totonicapán</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Zip">Zip</label>
+                    <div class="col-md-4">
+                        <input id="Zip" name="Zip" type="text" placeholder="Zip" class="form-control input-md" required="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Pais">Pais</label>
+                    <div class="col-md-4">
+                        <input id="Pais" name="Pais" type="text" placeholder="Pais" class="form-control input-md">
+
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+        <!-- Fin Formulario -->
+
+        <a href="@Url.Action("Paso3","Compra")" class=" to-buy">CONTINUAR</a>
+        <div class="clearfix"> </div>
+    </div>
+</div>
