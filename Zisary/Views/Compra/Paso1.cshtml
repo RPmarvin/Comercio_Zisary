@@ -20,16 +20,20 @@
                     <th>Price</th>
                 </tr>
             </thead>
-            <tbody id="itemcarrito"></tbody>
+            <tbody id="itemcarrito2"></tbody>
             <tr>
                 <th></th><th></th>
                 <th>Total:</th>
                 <th><div id="totalCompra">0.00</div></th>
             </tr>
         </table>
-        
-        <a href="@Url.Action("Paso2","Compra")" class="to-buy">CONTINUAR</a>
-        <div class="clearfix"> </div>
+        <div class="row">
+            <div class="col-md-6">
+                <a href="@Url.Action("Paso2","Compra")" class="to-buy">CONTINUAR</a>
+                <div class="clearfix"> </div>
+                <br>
+            </div>
+        </div>
 </div>
 
 </div>
@@ -57,7 +61,8 @@
                 ' <td class="price">S/. ' + this.Precio + '</td>' +
                 ' </tr>'
         });
-        $('#itemcarrito').html(html);
+        console.log(html);
+        $('#itemcarrito2').html(html);
         $("#totalCompra").text('S/.' + total);
     }
 </script>

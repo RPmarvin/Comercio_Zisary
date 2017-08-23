@@ -8,6 +8,7 @@ namespace Zisary.Controllers
 {
     public class CompraController : Controller
     {
+        private Models.TiendaEntities bd = new Models.TiendaEntities();
         // GET: Compra
         public ActionResult Paso1()
         {

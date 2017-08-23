@@ -286,3 +286,9 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+Zisary/Controllers/CompraController.cs
+Zisary/Controllers/CompraController.cs
+*.cs
+*.cs
+*.cs
+Zisary/Areas/admin/Controllers/ProductoController.cs

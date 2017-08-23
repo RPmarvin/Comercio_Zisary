@@ -50,8 +50,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <h1><a href="@Url.Action("Index","Home")">TIENDA <span>ZISARY</span></a></h1>
                 </div>
                 <!--cart-->
+
                 <div id="activador" class="col-sm-5 world animated wow fadeInRight dropdown" data-wow-delay=".5s">
                     <div class="cart box_1">
+                        @if(!HttpContext.Current.User.Identity.IsAuthenticated)
+                        {
                         <a href="@Url.Action("Paso1","Compra")">
                             <h3>
                                 <div class="total">
@@ -61,13 +64,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <img src="~/images/cart.png" alt="" />
                             </h3>
                         </a>
+                        }
+                        else
+                        {
+                            <a href="@Url.Action("Login","Home")">
+                                <h3>
+                                    <div class="total">
+                                        <p>Cant<span id="nroProductosCarrito">(0)</span><p>
+                                        <p id="totalCompraCarrito">S/. 0.00<p>
+                                    </div>
+                                    <img src="~/images/cart.png" alt="" />
+                                </h3>
+                            </a>
+                        }
+
                     </div>
                     <!--probando-->
                     <div id="desplegar" class="row">
                         <div  id="itemcarrito"></div>
                     </div>
-                    
-                    
+
+
                     <!--Probando-->
                 </div>
                 <!--cart-->
@@ -149,9 +166,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                                     </div>
                                 </li>
-                                <li><a href="~/products.html">Products</a></li>
-                                <li><a href="~/account.html">Sign In</a></li>
-                                <li class="last"><a href="~/contact.html">Contact</a></li>
+                                <li><a href="@Url.Action("Buscar","Home")">Products</a></li>
+                                <li><a href="@Url.Action("Login","Home")">Iniciar Sesion</a></li>
+                                <li class="last"><a href="@Url.Action("Logout","Home")">Salir</a></li>
+                                @*<li class="last"><a>@Zisary.Controllers.HomeController.GetUsuario()</a></li>*@
                             </ul>
                         </div><!-- /.navbar-collapse -->
 

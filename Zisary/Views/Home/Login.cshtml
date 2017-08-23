@@ -1,0 +1,45 @@
+﻿<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInLeft;">
+            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active">Account</li>
+        </ol>
+    </div>
+</div>
+<div class="account">
+    <div class="container">
+        <h2>Cuenta</h2>
+        <div class="account_grid">
+            <div class="col-md-6 login-right">
+
+                    @*<span>Email Address</span>
+                    <input type="text" name="email">
+
+                    <span>Password</span>
+                    <input type="password" name="password">
+                    <div class="word-in">
+                        <a class="forgot" href="#">Forgot Your Password?</a>
+                        <input type="submit" value="INGRESAR">
+                    </div>*@
+                    <form action="@Url.Action("Secion","Home")" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="email-modal" placeholder="Usuario" name="usuario">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password-modal" placeholder="Contraseña" name="clave">
+                        </div>
+
+                        <p class="text-center">
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i>Log in</button>
+                        </p>
+                    </form>
+            </div>
+            <div class="col-md-6 login-left">
+                <h4>NEW CUSTOMERS</h4>
+                <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+                <a class="acount-btn" href="@Url.Action("Registrar","Home")">Crear Cuenta</a>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>

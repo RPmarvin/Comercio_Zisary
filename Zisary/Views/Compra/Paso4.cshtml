@@ -20,7 +20,7 @@
                     <th>Price</th>
                 </tr>
             </thead>
-            <tbody id="itemcarrito"></tbody>
+            <tbody id="itemcarrito3"></tbody>
             <tr>
                 <th></th>
                 <th></th>
@@ -31,6 +31,7 @@
 
         <a id="btnConfirmar" href="#" class="to-buy">CONFIRMAR & PAGAR</a>
         <div class="clearfix"> </div>
+        <br>
     </div>
 
 </div>
@@ -67,12 +68,12 @@
                 '" alt="" width="124" height="124" /></td>' +
                 ' <td class="desc">' + this.Denominacion + ' &nbsp; <a title="Remove Item" class="icon-remove- sign" href="#"></a></td>' +
                 ' <td class="qty">' +
-                ' <input type="text" class="tiny-size" value="' + this.Cantidad + '" />' +
+                ' <p type="text" class="tiny-size" value="" />'+this.Cantidad+'</p>' +
                 ' </td>' +
                 ' <td class="price">S/. ' + this.Precio + '</td>' +
                 ' </tr>'
         });
-        $('#itemcarrito').html(html);
+        $('#itemcarrito3').html(html);
         $("#totalCompra").text('S/.' + total);
     }
 </script>

@@ -165,6 +165,7 @@
     <Content Include="images\t7.jpg" />
     <Content Include="images\t8.jpg" />
     <Content Include="images\t9.jpg" />
+    <Content Include="ImgProductos\ 20170804010252.jpg" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\imagezoom.js" />
     <Content Include="js\jquery.flexslider.js" />
@@ -204,6 +205,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\SessionHelper.cs" />
     <Compile Include="Models\Cliente.cs">
       <DependentUpon>ModelTienda.tt</DependentUpon>
     </Compile>
@@ -274,6 +276,8 @@
     <Content Include="Views\Compra\Paso3.cshtml" />
     <Content Include="Views\Compra\Paso4.cshtml" />
     <Content Include="Views\Compra\Paso1.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Registrar.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -281,9 +285,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ImgProductos\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
